@@ -1,12 +1,18 @@
-FROM node:22-alpine AS base
+FROM node:22-bookworm-slim AS base
 WORKDIR /app
-RUN apk add --no-cache libc6-compat openssl
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
 # Dependencies stage
 FROM base AS deps
 COPY package.json package-lock.json* ./
 COPY prisma ./prisma/
-RUN npm install
+RUN npm install --no-audit --no-fund
+RUN V='const f=require("fs");const p=process.argv[1];console.log(JSON.parse(f.readFileSync("node_modules/"+p+"/package.json")).version)' \
+    && LCSS=$(node -e "$V" lightningcss) \
+    && OXIDE=$(node -e "$V" @tailwindcss/oxide) \
+    && npm install --no-save --no-audit --no-fund \
+       "lightningcss-linux-x64-gnu@$LCSS" "@tailwindcss/oxide-linux-x64-gnu@$OXIDE"
 
 # Builder stage
 FROM base AS builder
@@ -16,9 +22,9 @@ COPY . .
 ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV NODE_OPTIONS="--max-old-space-size=1536"
 
-RUN npx prisma generate
-RUN npm run build
+RUN npx prisma generate && npm run build
 
 # Runner stage
 FROM base AS runner
@@ -29,10 +35,9 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs
+RUN groupadd --system --gid 1001 nodejs && \
+    useradd --system --uid 1001 --gid nodejs nextjs
 
-# Copy assets and standalone server with proper user ownership
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules

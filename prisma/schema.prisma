@@ -41,7 +41,7 @@ model Configuracao {
   exigirPinCommandBar      Boolean  @default(true)
   exigirPinUploadImagem    Boolean  @default(true)
   exigirPinChatAi          Boolean  @default(true)
-  tema                     String   @default("discord")
+  tema                     String   @default("terminal")
   smoothCursor             Boolean  @default(true)
   googleApiKeyCriptografado String?
   openaiApiKeyCriptografado String?

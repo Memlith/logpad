@@ -1,4 +1,4 @@
-# Hayaku Note — Especificação Técnica
+# Logpad — Especificação Técnica
 
 > Design system completo: ver `DESIGN.md`.
 

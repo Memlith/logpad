@@ -67,6 +67,24 @@ const THEME_PALETTES: {
   previewLight: { bg: string; sidebar: string; text: string; accent: string }
 }[] = [
   {
+    id: "terminal",
+    name: "Terminal (CRT / Hacker)",
+    tag: "Padrão",
+    desc: "Estética de terminal com fonte monoespaçada, cantos precisos e verde fósforo neon (#22c55e) sobre preto CRT (#050a06).",
+    previewDark: {
+      bg: "#050a06",
+      sidebar: "#070e08",
+      text: "#c8f7d0",
+      accent: "#22c55e",
+    },
+    previewLight: {
+      bg: "#eef6ef",
+      sidebar: "#e5f2e7",
+      text: "#092210",
+      accent: "#15803d",
+    },
+  },
+  {
     id: "catppuccin",
     name: "Catppuccin (Frappé & Latte)",
     tag: "Descanso Visual",
@@ -87,7 +105,7 @@ const THEME_PALETTES: {
   {
     id: "discord",
     name: "Discord (Suave / Menos Contraste)",
-    tag: "Recomendado",
+    tag: "Suave",
     desc: "Cores suaves e confortáveis tanto no modo Claro quanto no Escuro. Reduz o cansaço visual e elimina o contraste de '8 ou 80'.",
     previewDark: {
       bg: "#313338",
@@ -368,11 +386,15 @@ export function SettingsDialog() {
     : "Digite o código de 6 dígitos do Google Authenticator."
 
   const activePalette: ThemePalette =
-    policies?.tema === "catppuccin"
+    policies?.tema === "terminal"
+      ? "terminal"
+      : policies?.tema === "catppuccin"
       ? "catppuccin"
       : policies?.tema === "normal" || policies?.tema === "classico"
       ? "normal"
-      : "discord"
+      : policies?.tema === "discord"
+      ? "discord"
+      : "terminal"
 
   return (
     <>
@@ -428,7 +450,7 @@ export function SettingsDialog() {
                   <Palette className="size-3.5 text-primary" />
                   <span>Aparência e Tema</span>
                 </div>
-                <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">Escolha entre Catppuccin, Discord suave ou clássico de alto contraste.</p>
+                <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">Escolha entre Terminal CRT, Catppuccin, Discord suave ou clássico de alto contraste.</p>
               </div>
 
               <div className="pt-2 border-t border-border/50">
@@ -458,7 +480,7 @@ export function SettingsDialog() {
                       <span>Tema e Paleta de Cores</span>
                     </h3>
                     <p className="mt-0.5 text-xs text-muted-foreground">
-                      Defina a paleta global do sistema. Os temas Catppuccin e Discord foram desenhados para conforto e descanso visual tanto no modo Claro quanto no Escuro.
+                      Defina a paleta global do sistema, incluindo o tema Terminal (CRT / Hacker), Catppuccin, Discord e Clássico.
                     </p>
                   </div>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 shrink-0">
@@ -467,7 +489,7 @@ export function SettingsDialog() {
                 </div>
 
                 {/* Seletor de Paleta / Família de Tema */}
-                <div className="grid gap-3 sm:grid-cols-3 pt-1">
+                <div className="grid gap-3 sm:grid-cols-2 pt-1">
                   {THEME_PALETTES.map((item) => {
                     const isSelected = activePalette === item.id
                     return (

@@ -8,7 +8,7 @@ import { temAcessosPin } from "@/lib/pin-session"
 import { obterPoliticasAtuais } from "@/lib/security-policies"
 
 export const metadata = {
-  title: "Hayaku Note",
+  title: "Logpad",
 }
 
 export default async function HomePage() {
@@ -32,7 +32,7 @@ export default async function HomePage() {
 
             <div className="max-w-md w-full space-y-6 mx-auto animate-in fade-in-0 zoom-in-95 duration-400 ease-[cubic-bezier(0.32,0.72,0,1)]">
               <div className="space-y-2">
-                <h1 className="text-xl font-semibold tracking-tight font-sans">Hayaku Note</h1>
+                <h1 className="text-xl font-semibold tracking-tight font-sans">Logpad</h1>
                 <p className="text-xs text-muted-foreground font-sans">
                   Nenhuma anotação selecionada. Escolha uma nota na barra lateral ou crie uma nova para começar.
                 </p>

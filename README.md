@@ -1,8 +1,8 @@
-# Hayaku Note
+# Logpad
 
 A minimal, personal, zero-friction markdown notebook with instant keyboard navigation, granular security policies, and built-in AI assistance.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/gabrielnito/hayaku-note&env=DATABASE_URL,PIN_HASH,UPLOADTHING_TOKEN,SETTINGS_SETUP_KEY,TOTP_ENCRYPTION_KEY&project-name=hayaku-note&repository-name=hayaku-note)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Memlith/logpad&env=DATABASE_URL,PIN_HASH,UPLOADTHING_TOKEN,SETTINGS_SETUP_KEY,TOTP_ENCRYPTION_KEY&project-name=logpad&repository-name=logpad)
 ![Docker](https://img.shields.io/badge/docker-compose%20ready-blue?logo=docker)
 ![License](https://img.shields.io/badge/license-MIT-black)
 ![Stack](https://img.shields.io/badge/stack-Next.js%20%2B%20Bun%20%2B%20Prisma%20%2B%20Tailwind-black)
@@ -11,9 +11,9 @@ A minimal, personal, zero-friction markdown notebook with instant keyboard navig
 
 ---
 
-## What is Hayaku Note?
+## What is Logpad?
 
-**Hayaku Note** was created to eliminate friction from personal note-taking and knowledge management. There are no traditional accounts, sign-up flows, or heavy workspace overhead. Instead, it provides an instant, keyboard-friendly workspace stored as pure Markdown in your own database — with optional granular PIN security for actions and TOTP-protected admin controls.
+**Logpad** was created to eliminate friction from personal note-taking and knowledge management. There are no traditional accounts, sign-up flows, or heavy workspace overhead. Instead, it provides an instant, keyboard-friendly workspace stored as pure Markdown in your own database — with optional granular PIN security for actions and TOTP-protected admin controls.
 
 - **No login friction, no accounts.** No complex user tables or OAuth providers. Everyday writing and reading can be as open or locked down as you want, controlled via a 6-digit PIN.
 - **Granular security policies.** Fully configurable via an admin panel protected by Google Authenticator (TOTP). Choose whether notes are public or private, require PIN per session/file, gate search, command bar, image uploads, or AI chat.
@@ -106,8 +106,8 @@ docker compose up -d --build
 
 ### 2. Fork & Clone
 ```bash
-git clone https://github.com/YOUR_USERNAME/hayaku-note.git
-cd hayaku-note
+git clone https://github.com/YOUR_USERNAME/logpad.git
+cd logpad
 bun install
 ```
 

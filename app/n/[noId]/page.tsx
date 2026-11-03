@@ -16,15 +16,15 @@ export async function generateMetadata({ params }: NotePageProps): Promise<Metad
   const { noId } = await params
   const politicas = await obterPoliticasAtuais()
   const scopes = politicas.acessoArquivo === "SESSAO" ? ["files"] : politicas.acessoArquivo === "POR_ARQUIVO" ? [`file:${noId}`] : []
-  if (scopes.length > 0 && !(await temAcessosPin(scopes))) return { title: "Hayaku Note" }
+  if (scopes.length > 0 && !(await temAcessosPin(scopes))) return { title: "Logpad" }
   const no = await obterNo(noId)
   if (!no) {
     return {
-      title: "Hayaku Note",
+      title: "Logpad",
     }
   }
   return {
-    title: `${no.nome} — Hayaku Note`,
+    title: `${no.nome} — Logpad`,
   }
 }
 

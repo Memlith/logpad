@@ -261,6 +261,108 @@ html.dark.theme-catppuccin {
     --sidebar-ring: #babbf1;
 }
 
+/* Terminal (Light — Phosphor Paper) */
+.theme-terminal,
+html.theme-terminal {
+    --font-sans: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-heading: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --radius: 0.25rem;
+    --background: #eef6ef;
+    --foreground: #092210;
+    --card: #f6fbf7;
+    --card-foreground: #092210;
+    --popover: #f6fbf7;
+    --popover-foreground: #092210;
+    --primary: #15803d;
+    --primary-foreground: #f0fdf4;
+    --secondary: #dcfce7;
+    --secondary-foreground: #092210;
+    --muted: #e2f1e5;
+    --muted-foreground: #3b6e4c;
+    --accent: #d3ecd8;
+    --accent-foreground: #064e22;
+    --destructive: #dc2626;
+    --border: rgba(21, 128, 61, 0.24);
+    --input: rgba(21, 128, 61, 0.24);
+    --ring: #16a34a;
+    --chart-1: #16a34a;
+    --chart-2: #059669;
+    --chart-3: #d97706;
+    --chart-4: #0284c7;
+    --chart-5: #dc2626;
+    --sidebar: #e5f2e7;
+    --sidebar-foreground: #092210;
+    --sidebar-primary: #15803d;
+    --sidebar-primary-foreground: #f0fdf4;
+    --sidebar-accent: #d3ecd8;
+    --sidebar-accent-foreground: #064e22;
+    --sidebar-border: rgba(21, 128, 61, 0.22);
+    --sidebar-ring: #16a34a;
+}
+
+/* Terminal (Dark — CRT Phosphor / Hacker) */
+.theme-terminal.dark,
+html.theme-terminal.dark,
+html.dark.theme-terminal {
+    --font-sans: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-heading: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --radius: 0.25rem;
+    --background: #050a06;
+    --foreground: #c8f7d0;
+    --card: #09120b;
+    --card-foreground: #c8f7d0;
+    --popover: #09120b;
+    --popover-foreground: #c8f7d0;
+    --primary: #22c55e;
+    --primary-foreground: #030704;
+    --secondary: #0f1f13;
+    --secondary-foreground: #86efac;
+    --muted: #0b160e;
+    --muted-foreground: #5e9c70;
+    --accent: #112616;
+    --accent-foreground: #4ade80;
+    --destructive: #ef4444;
+    --border: rgba(34, 197, 94, 0.24);
+    --input: rgba(34, 197, 94, 0.26);
+    --ring: #22c55e;
+    --chart-1: #22c55e;
+    --chart-2: #4ade80;
+    --chart-3: #facc15;
+    --chart-4: #38bdf8;
+    --chart-5: #f87171;
+    --sidebar: #070e08;
+    --sidebar-foreground: #b8f2c2;
+    --sidebar-primary: #22c55e;
+    --sidebar-primary-foreground: #030704;
+    --sidebar-accent: #102214;
+    --sidebar-accent-foreground: #4ade80;
+    --sidebar-border: rgba(34, 197, 94, 0.2);
+    --sidebar-ring: #22c55e;
+}
+
+.theme-terminal,
+.theme-terminal body,
+.theme-terminal .font-sans {
+    font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+.theme-terminal.dark ::selection {
+    background-color: rgba(34, 197, 94, 0.32);
+    color: #ecfdf5;
+}
+
+.theme-terminal:not(.dark) ::selection {
+    background-color: rgba(21, 128, 61, 0.22);
+    color: #052e16;
+}
+
+.theme-terminal.dark .ProseMirror h1,
+.theme-terminal.dark .ProseMirror h2,
+.theme-terminal.dark .ProseMirror h3 {
+    color: #4ade80;
+    text-shadow: 0 0 12px rgba(34, 197, 94, 0.22);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -440,6 +542,30 @@ html.dark.theme-catppuccin {
   background: rgba(198, 208, 245, 0.3);
 }
 
+.theme-terminal * {
+  scrollbar-color: rgba(21, 128, 61, 0.28) transparent;
+}
+
+.theme-terminal ::-webkit-scrollbar-thumb {
+  background: rgba(21, 128, 61, 0.28);
+}
+
+.theme-terminal ::-webkit-scrollbar-thumb:hover {
+  background: rgba(21, 128, 61, 0.48);
+}
+
+.theme-terminal.dark * {
+  scrollbar-color: rgba(34, 197, 94, 0.28) transparent;
+}
+
+.theme-terminal.dark ::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.28);
+}
+
+.theme-terminal.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.48);
+}
+
 /* Utility to completely hide scrollbars when desired */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -461,4 +587,4 @@ html.dark.theme-catppuccin {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
+}

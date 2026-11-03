@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-export type ThemePalette = "catppuccin" | "discord" | "normal"
+export type ThemePalette = "terminal" | "catppuccin" | "discord" | "normal"
 export type ThemeMode = "dark" | "light" | "system"
 export type ResolvedMode = "dark" | "light"
 
@@ -25,7 +25,7 @@ const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined
 function getStoredPalette(defaultPalette: ThemePalette): ThemePalette {
   if (typeof window === "undefined") return defaultPalette
   const val = localStorage.getItem("theme_palette") || localStorage.getItem("theme")
-  if (val === "catppuccin" || val === "discord" || val === "normal") return val
+  if (val === "terminal" || val === "catppuccin" || val === "discord" || val === "normal") return val
   return defaultPalette
 }
 
@@ -70,17 +70,21 @@ function subscribeToTheme(callback: () => void) {
 
 export function ThemeProvider({
   children,
-  initialTheme = "discord",
+  initialTheme = "terminal",
 }: {
   children: React.ReactNode
   initialTheme?: string
 }) {
   const defaultPalette: ThemePalette =
-    initialTheme === "catppuccin"
+    initialTheme === "terminal"
+      ? "terminal"
+      : initialTheme === "catppuccin"
       ? "catppuccin"
       : initialTheme === "normal" || initialTheme === "classico"
       ? "normal"
-      : "discord"
+      : initialTheme === "discord"
+      ? "discord"
+      : "terminal"
 
   const getPaletteSnapshot = React.useCallback(() => getStoredPalette(defaultPalette), [defaultPalette])
   const getPaletteServerSnapshot = React.useCallback(() => defaultPalette, [defaultPalette])
@@ -108,10 +112,13 @@ export function ThemeProvider({
 
   React.useEffect(() => {
     const root = document.documentElement
-    root.classList.remove("light", "dark", "theme-discord", "theme-catppuccin", "theme-normal")
+    root.classList.remove("light", "dark", "theme-terminal", "theme-discord", "theme-catppuccin", "theme-normal")
 
     root.classList.add(resolvedMode)
-    if (palette === "catppuccin") {
+    if (palette === "terminal") {
+      root.classList.add("theme-terminal")
+      root.dataset.palette = "terminal"
+    } else if (palette === "catppuccin") {
       root.classList.add("theme-catppuccin")
       root.dataset.palette = "catppuccin"
     } else if (palette === "discord") {
@@ -140,7 +147,7 @@ export function ThemeProvider({
 
   const setTheme = React.useCallback(
     (val: string) => {
-      if (val === "catppuccin" || val === "discord" || val === "normal") {
+      if (val === "terminal" || val === "catppuccin" || val === "discord" || val === "normal") {
         setPalette(val)
       } else if (val === "dark" || val === "light" || val === "system") {
         setMode(val as ThemeMode)

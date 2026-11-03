@@ -17,10 +17,13 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Hayaku Note",
-  description: "Hayaku Note",
+  title: "Logpad",
+  description: "Logpad",
   icons: {
-    icon: "/icon.ico",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/icon.ico", sizes: "any" },
+    ],
   },
 }
 
@@ -30,7 +33,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   const politicas = await obterPoliticasAtuais()
-  const tema = politicas.tema || "discord"
+  const tema = politicas.tema || "terminal"
 
   return (
     <html

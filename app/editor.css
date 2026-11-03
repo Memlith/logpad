@@ -32,6 +32,18 @@
     --code-bg: #232634;
     --code-fg: #c6d0f5;
   }
+
+  .theme-terminal {
+    --code-bg: #e2f1e5;
+    --code-fg: #092210;
+  }
+
+  .theme-terminal.dark,
+  .dark .theme-terminal,
+  .theme-terminal .dark {
+    --code-bg: #040905;
+    --code-fg: #bbf7d0;
+  }
 }
 
 .ProseMirror {
@@ -476,128 +488,269 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. Clássico / Default Theme (Dark & Light)
+   3. Terminal Theme (Dark & Light)
+   -------------------------------------------------------------------------- */
+.theme-terminal.dark .hljs,
+.dark .theme-terminal .hljs,
+.theme-terminal.dark .ProseMirror pre code,
+.theme-terminal.dark .ProseMirror pre {
+  color: #bbf7d0;
+}
+
+.theme-terminal.dark .hljs-keyword,
+.theme-terminal.dark .hljs-selector-tag {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.theme-terminal.dark .hljs-function,
+.theme-terminal.dark .hljs-title.function_,
+.theme-terminal.dark .hljs-title {
+  color: #38bdf8;
+}
+
+.theme-terminal.dark .hljs-string,
+.theme-terminal.dark .hljs-template-variable,
+.theme-terminal.dark .hljs-addition {
+  color: #86efac;
+}
+
+.theme-terminal.dark .hljs-type,
+.theme-terminal.dark .hljs-title.class_,
+.theme-terminal.dark .hljs-class {
+  color: #facc15;
+}
+
+.theme-terminal.dark .hljs-number,
+.theme-terminal.dark .hljs-literal,
+.theme-terminal.dark .hljs-boolean {
+  color: #fb923c;
+}
+
+.theme-terminal.dark .hljs-built_in,
+.theme-terminal.dark .hljs-symbol {
+  color: #2dd4bf;
+}
+
+.theme-terminal.dark .hljs-tag,
+.theme-terminal.dark .hljs-tag .hljs-name {
+  color: #4ade80;
+}
+
+.theme-terminal.dark .hljs-attr,
+.theme-terminal.dark .hljs-attribute {
+  color: #7dd3fc;
+}
+
+.theme-terminal.dark .hljs-variable,
+.theme-terminal.dark .hljs-params,
+.theme-terminal.dark .hljs-property {
+  color: #d1fae5;
+}
+
+.theme-terminal.dark .hljs-operator,
+.theme-terminal.dark .hljs-punctuation,
+.theme-terminal.dark .hljs-tag .hljs-punctuation {
+  color: #6ee7b7;
+}
+
+.theme-terminal.dark .hljs-comment,
+.theme-terminal.dark .hljs-quote {
+  color: #4d7c5d;
+}
+
+/* Terminal Light */
+.theme-terminal:not(.dark) .hljs,
+.theme-terminal:not(.dark) .ProseMirror pre code,
+.theme-terminal:not(.dark) .ProseMirror pre {
+  color: #092210;
+}
+
+.theme-terminal:not(.dark) .hljs-keyword,
+.theme-terminal:not(.dark) .hljs-selector-tag {
+  color: #15803d;
+  font-weight: 600;
+}
+
+.theme-terminal:not(.dark) .hljs-function,
+.theme-terminal:not(.dark) .hljs-title.function_,
+.theme-terminal:not(.dark) .hljs-title {
+  color: #0369a1;
+}
+
+.theme-terminal:not(.dark) .hljs-string,
+.theme-terminal:not(.dark) .hljs-template-variable,
+.theme-terminal:not(.dark) .hljs-addition {
+  color: #166534;
+}
+
+.theme-terminal:not(.dark) .hljs-type,
+.theme-terminal:not(.dark) .hljs-title.class_,
+.theme-terminal:not(.dark) .hljs-class {
+  color: #b45309;
+}
+
+.theme-terminal:not(.dark) .hljs-number,
+.theme-terminal:not(.dark) .hljs-literal,
+.theme-terminal:not(.dark) .hljs-boolean {
+  color: #c2410c;
+}
+
+.theme-terminal:not(.dark) .hljs-built_in,
+.theme-terminal:not(.dark) .hljs-symbol {
+  color: #0f766e;
+}
+
+.theme-terminal:not(.dark) .hljs-tag,
+.theme-terminal:not(.dark) .hljs-tag .hljs-name {
+  color: #15803d;
+}
+
+.theme-terminal:not(.dark) .hljs-attr,
+.theme-terminal:not(.dark) .hljs-attribute {
+  color: #0369a1;
+}
+
+.theme-terminal:not(.dark) .hljs-variable,
+.theme-terminal:not(.dark) .hljs-params,
+.theme-terminal:not(.dark) .hljs-property {
+  color: #064e22;
+}
+
+.theme-terminal:not(.dark) .hljs-operator,
+.theme-terminal:not(.dark) .hljs-punctuation,
+.theme-terminal:not(.dark) .hljs-tag .hljs-punctuation {
+  color: #166534;
+}
+
+.theme-terminal:not(.dark) .hljs-comment,
+.theme-terminal:not(.dark) .hljs-quote {
+  color: #4d7c5d;
+}
+
+/* --------------------------------------------------------------------------
+   4. Clássico / Default Theme (Dark & Light)
    -------------------------------------------------------------------------- */
 .theme-normal.dark .hljs,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs,
-.dark:not(.theme-discord):not(.theme-catppuccin) .ProseMirror pre code,
-.dark:not(.theme-discord):not(.theme-catppuccin) .ProseMirror pre {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .ProseMirror pre code,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .ProseMirror pre {
   color: #e6edf3;
 }
 
 .theme-normal.dark .hljs-keyword,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-keyword,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-selector-tag {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-keyword,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-selector-tag {
   color: #c678dd;
   font-weight: 500;
 }
 
 .theme-normal.dark .hljs-function,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-function,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-title.function_,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-title {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-function,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-title.function_,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-title {
   color: #61afef;
 }
 
 .theme-normal.dark .hljs-string,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-string,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-template-variable,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-addition {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-string,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-template-variable,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-addition {
   color: #98c379;
 }
 
 .theme-normal.dark .hljs-type,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-type,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-title.class_,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-class {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-type,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-title.class_,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-class {
   color: #e5c07b;
 }
 
 .theme-normal.dark .hljs-number,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-number,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-literal,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-boolean {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-number,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-literal,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-boolean {
   color: #d19a66;
 }
 
 .theme-normal.dark .hljs-built_in,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-built_in,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-symbol {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-built_in,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-symbol {
   color: #e06c75;
 }
 
 .theme-normal.dark .hljs-tag,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-tag,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-tag .hljs-name {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-tag,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-tag .hljs-name {
   color: #e06c75;
 }
 
 .theme-normal.dark .hljs-attr,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-attr,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-attribute {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-attr,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-attribute {
   color: #d19a66;
 }
 
 .theme-normal.dark .hljs-comment,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-comment,
-.dark:not(.theme-discord):not(.theme-catppuccin) .hljs-quote {
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-comment,
+.dark:not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-quote {
   color: #7f848e;
 }
 
 /* Default / Classic Light */
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .ProseMirror pre code,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .ProseMirror pre {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .ProseMirror pre code,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .ProseMirror pre {
   color: #24292e;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-keyword,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-selector-tag {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-keyword,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-selector-tag {
   color: #d73a49;
   font-weight: 500;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-function,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-title.function_,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-title {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-function,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-title.function_,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-title {
   color: #6f42c1;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-string,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-template-variable,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-addition {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-string,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-template-variable,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-addition {
   color: #22863a;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-type,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-title.class_,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-class {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-type,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-title.class_,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-class {
   color: #005cc5;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-number,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-literal,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-boolean {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-number,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-literal,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-boolean {
   color: #005cc5;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-built_in,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-symbol {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-built_in,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-symbol {
   color: #e36209;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-tag,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-tag .hljs-name {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-tag,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-tag .hljs-name {
   color: #22863a;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-attr,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-attribute {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-attr,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-attribute {
   color: #6f42c1;
 }
 
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-comment,
-:root:not(.dark):not(.theme-discord):not(.theme-catppuccin) .hljs-quote {
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-comment,
+:root:not(.dark):not(.theme-discord):not(.theme-catppuccin):not(.theme-terminal) .hljs-quote {
   color: #6a737d;
 }
 

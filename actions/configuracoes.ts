@@ -45,7 +45,7 @@ const politicasPadrao: PoliticasSeguranca = {
   exigirPinCommandBar: true,
   exigirPinUploadImagem: true,
   exigirPinChatAi: true,
-  tema: "discord",
+  tema: "terminal",
   smoothCursor: true,
 }
 
@@ -85,7 +85,7 @@ function paraPoliticas(configuracao: Awaited<ReturnType<typeof obterConfiguracao
     exigirPinCommandBar: configuracao.exigirPinCommandBar,
     exigirPinUploadImagem: configuracao.exigirPinUploadImagem,
     exigirPinChatAi: configuracao.exigirPinChatAi,
-    tema: configuracao.tema || "discord",
+    tema: configuracao.tema || "terminal",
     smoothCursor: configuracao.smoothCursor ?? true,
   }
 }
@@ -152,12 +152,12 @@ export async function obterPoliticasSeguranca(): Promise<PoliticasSeguranca> {
 
 export async function obterTemaConfigurado(): Promise<string> {
   const configuracao = await obterConfiguracao()
-  return configuracao.tema || "discord"
+  return configuracao.tema || "terminal"
 }
 
 export async function atualizarTema(tema: string): Promise<{ success: boolean; error?: string }> {
   await exigirSessaoConfiguracoes()
-  if (!["catppuccin", "discord", "normal", "classico"].includes(tema)) {
+  if (!["terminal", "catppuccin", "discord", "normal", "classico"].includes(tema)) {
     return { success: false, error: "Tema inválido." }
   }
   await prisma.configuracao.update({
@@ -187,7 +187,7 @@ export async function atualizarPoliticasSeguranca(politicas: PoliticasSeguranca)
       exigirPinCommandBar: politicas.exigirPinCommandBar,
       exigirPinUploadImagem: politicas.exigirPinUploadImagem,
       exigirPinChatAi: politicas.exigirPinChatAi,
-      tema: politicas.tema || "discord",
+      tema: politicas.tema || "terminal",
       smoothCursor: politicas.smoothCursor ?? true,
     },
   })

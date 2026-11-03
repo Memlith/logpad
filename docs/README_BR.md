@@ -1,8 +1,8 @@
-# Hayaku Note
+# Logpad
 
 Um caderno de anotações minimalista, pessoal e sem atrito, com navegação rápida por teclado, políticas de segurança granulares e assistente de IA integrado.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/gabrielnito/hayaku-note&env=DATABASE_URL,PIN_HASH,UPLOADTHING_TOKEN,SETTINGS_SETUP_KEY,TOTP_ENCRYPTION_KEY&project-name=hayaku-note&repository-name=hayaku-note)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Memlith/logpad&env=DATABASE_URL,PIN_HASH,UPLOADTHING_TOKEN,SETTINGS_SETUP_KEY,TOTP_ENCRYPTION_KEY&project-name=logpad&repository-name=logpad)
 ![Docker](https://img.shields.io/badge/docker-compose%20ready-blue?logo=docker)
 ![License](https://img.shields.io/badge/license-MIT-black)
 ![Stack](https://img.shields.io/badge/stack-Next.js%20%2B%20Bun%20%2B%20Prisma%20%2B%20Tailwind-black)
@@ -11,9 +11,9 @@ Um caderno de anotações minimalista, pessoal e sem atrito, com navegação rá
 
 ---
 
-## O que é o Hayaku Note?
+## O que é o Logpad?
 
-O **Hayaku Note** foi criado para eliminar o atrito de tomar notas e organizar conhecimento pessoal. Não existem contas tradicionais, fluxos de login com senha ou sobrecarga pesada de workspaces. Em vez disso, você tem um espaço ágil, controlado por teclado e armazenado como Markdown puro no seu próprio banco de dados — com proteção opcional por PIN de 6 dígitos e painel administrativo protegido por Google Authenticator (TOTP).
+O **Logpad** foi criado para eliminar o atrito de tomar notas e organizar conhecimento pessoal. Não existem contas tradicionais, fluxos de login com senha ou sobrecarga pesada de workspaces. Em vez disso, você tem um espaço ágil, controlado por teclado e armazenado como Markdown puro no seu próprio banco de dados — com proteção opcional por PIN de 6 dígitos e painel administrativo protegido por Google Authenticator (TOTP).
 
 - **Sem atrito de login, sem contas tradicionais.** Sem tabelas de usuários ou OAuth complexo. O uso no dia a dia pode ser livre ou protegido por PIN de 6 dígitos com escopos de sessão.
 - **Políticas de segurança granulares.** Totalmente configuráveis por uma tela de Configurações protegida por 2FA (TOTP). Você escolhe se as notas são públicas ou privadas, se exigem PIN por sessão/arquivo, na busca, barra de comandos, upload de imagens ou chat com IA.
@@ -106,8 +106,8 @@ docker compose up -d --build
 
 ### 2. Fork e Clone
 ```bash
-git clone https://github.com/SEU_USUARIO/hayaku-note.git
-cd hayaku-note
+git clone https://github.com/SEU_USUARIO/logpad.git
+cd logpad
 bun install
 ```
 

@@ -157,12 +157,12 @@ export async function obterTemaConfigurado(): Promise<string> {
 
 export async function atualizarTema(tema: string): Promise<{ success: boolean; error?: string }> {
   await exigirSessaoConfiguracoes()
-  if (!["terminal", "catppuccin", "discord", "normal", "classico"].includes(tema)) {
+  if (!["green", "gray", "amber", "terminal", "catppuccin", "discord", "normal", "classico"].includes(tema)) {
     return { success: false, error: "Tema inválido." }
   }
   await prisma.configuracao.update({
     where: { id: CONFIGURACAO_ID },
-    data: { tema: tema === "classico" ? "normal" : tema },
+    data: { tema: tema === "classico" ? "normal" : tema === "terminal" ? "green" : tema },
   })
   return { success: true }
 }

@@ -2,6 +2,7 @@ import { obterArvore } from "@/actions/no"
 import { AppSidebar } from "@/components/app-sidebar"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { NostromoThemeSwitcher } from "@/components/theme-provider"
 import { GlobalShortcuts } from "@/components/global-shortcuts"
 import { AccessGate } from "@/components/access-gate"
 import { temAcessosPin } from "@/lib/pin-session"
@@ -25,9 +26,12 @@ export default async function HomePage() {
         <div className="flex h-screen w-full overflow-hidden">
           <AppSidebar arvore={arvore} />
           <main className="flex-1 flex flex-col items-center justify-center p-8 bg-background text-center overflow-y-auto relative">
-            <div className="absolute top-4 left-4 flex items-center gap-2">
-              <SidebarTrigger />
-              <span className="text-xs font-sans text-muted-foreground">Barra lateral</span>
+            <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <SidebarTrigger />
+                <span className="text-xs font-sans text-muted-foreground">Barra lateral</span>
+              </div>
+              <NostromoThemeSwitcher />
             </div>
 
             <div className="max-w-md w-full space-y-6 mx-auto animate-in fade-in-0 zoom-in-95 duration-400 ease-[cubic-bezier(0.32,0.72,0,1)]">

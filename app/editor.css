@@ -33,16 +33,42 @@
     --code-fg: #c6d0f5;
   }
 
-  .theme-terminal {
+  .theme-terminal,
+  .theme-green {
     --code-bg: #e2f1e5;
     --code-fg: #092210;
   }
 
   .theme-terminal.dark,
   .dark .theme-terminal,
-  .theme-terminal .dark {
+  .theme-terminal .dark,
+  .theme-green.dark {
     --code-bg: #040905;
-    --code-fg: #bbf7d0;
+    --code-fg: #d4ffe2;
+  }
+
+  .theme-gray {
+    --code-bg: #dfe7e3;
+    --code-fg: #141c19;
+  }
+
+  .theme-gray.dark,
+  .dark .theme-gray,
+  .theme-gray .dark {
+    --code-bg: #070a09;
+    --code-fg: #e2eee8;
+  }
+
+  .theme-amber {
+    --code-bg: #f2e2c2;
+    --code-fg: #2b1b00;
+  }
+
+  .theme-amber.dark,
+  .dark .theme-amber,
+  .theme-amber .dark {
+    --code-bg: #0a0601;
+    --code-fg: #fff6dd;
   }
 }
 
@@ -626,6 +652,66 @@
 .theme-terminal:not(.dark) .hljs-comment,
 .theme-terminal:not(.dark) .hljs-quote {
   color: #4d7c5d;
+}
+
+/* Torrens Gray Dark Syntax */
+.theme-gray.dark .hljs,
+.theme-gray.dark .ProseMirror pre code,
+.theme-gray.dark .ProseMirror pre {
+  color: #e2eee8;
+}
+.theme-gray.dark .hljs-keyword,
+.theme-gray.dark .hljs-selector-tag,
+.theme-gray.dark .hljs-tag,
+.theme-gray.dark .hljs-tag .hljs-name {
+  color: #abc0b7;
+  font-weight: 600;
+}
+.theme-gray.dark .hljs-function,
+.theme-gray.dark .hljs-title.function_,
+.theme-gray.dark .hljs-title,
+.theme-gray.dark .hljs-attr,
+.theme-gray.dark .hljs-attribute {
+  color: #ffffff;
+}
+.theme-gray.dark .hljs-string,
+.theme-gray.dark .hljs-template-variable,
+.theme-gray.dark .hljs-addition {
+  color: #c2d6cd;
+}
+.theme-gray.dark .hljs-comment,
+.theme-gray.dark .hljs-quote {
+  color: #6e857c;
+}
+
+/* Nostromo Amber Dark Syntax */
+.theme-amber.dark .hljs,
+.theme-amber.dark .ProseMirror pre code,
+.theme-amber.dark .ProseMirror pre {
+  color: #fff6dd;
+}
+.theme-amber.dark .hljs-keyword,
+.theme-amber.dark .hljs-selector-tag,
+.theme-amber.dark .hljs-tag,
+.theme-amber.dark .hljs-tag .hljs-name {
+  color: #ffb000;
+  font-weight: 600;
+}
+.theme-amber.dark .hljs-function,
+.theme-amber.dark .hljs-title.function_,
+.theme-amber.dark .hljs-title,
+.theme-amber.dark .hljs-attr,
+.theme-amber.dark .hljs-attribute {
+  color: #ffe066;
+}
+.theme-amber.dark .hljs-string,
+.theme-amber.dark .hljs-template-variable,
+.theme-amber.dark .hljs-addition {
+  color: #ffd166;
+}
+.theme-amber.dark .hljs-comment,
+.theme-amber.dark .hljs-quote {
+  color: #b87e00;
 }
 
 /* --------------------------------------------------------------------------

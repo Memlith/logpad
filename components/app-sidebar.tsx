@@ -17,7 +17,7 @@ import {
   Folder,
   FolderOpen,
 } from "lucide-react"
-import { useTheme } from "@/components/theme-provider"
+import { useTheme, NostromoThemeSwitcher } from "@/components/theme-provider"
 import { navigateWith } from "@/lib/navigation"
 import { criarNo, renomearNo, deletarNo } from "@/actions/no"
 import { NoItem, TipoNo } from "@/actions/types"
@@ -656,7 +656,13 @@ export function AppSidebar({ arvore, activeId }: SidebarTreeProps) {
         )}
       </SidebarContent>
 
-      <SidebarFooter className="p-2 border-t border-border/50 flex flex-col gap-1.5">
+      <SidebarFooter className="p-2 border-t border-border/50 flex flex-col gap-2">
+        <div className="flex items-center justify-between gap-1 px-0.5">
+          <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">
+            CRT THEME
+          </span>
+          <NostromoThemeSwitcher />
+        </div>
         <div className="flex items-center justify-between gap-1">
           <SettingsDialog />
           <button
@@ -667,9 +673,9 @@ export function AppSidebar({ arvore, activeId }: SidebarTreeProps) {
             {mounted ? (resolvedMode === "light" ? "Escuro" : "Claro") : "Tema"}
           </button>
         </div>
-        <div className="px-0.5">
+        <div className="px-0.5 flex items-center justify-between">
           <span className="text-[10px] text-muted-foreground font-mono">
-            Logpad v1.0
+            Logpad v1.0 // NOSTROMO
           </span>
         </div>
       </SidebarFooter>

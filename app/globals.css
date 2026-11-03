@@ -261,106 +261,295 @@ html.dark.theme-catppuccin {
     --sidebar-ring: #babbf1;
 }
 
-/* Terminal (Light — Phosphor Paper) */
+/* ==========================================================================
+   NOSTROMO CRT THEMES: Sevastopol Green, Torrens Gray, Nostromo Amber
+   ========================================================================== */
+
+/* 1. Sevastopol Green (Light — Phosphor Paper) */
 .theme-terminal,
-html.theme-terminal {
-    --font-sans: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    --font-heading: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    --radius: 0.25rem;
+.theme-green,
+html.theme-terminal,
+html.theme-green {
+    --font-sans: var(--font-crt-mono), var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-heading: var(--font-display), var(--font-crt-mono), var(--font-mono), monospace;
+    --radius: 0.125rem;
     --background: #eef6ef;
     --foreground: #092210;
     --card: #f6fbf7;
     --card-foreground: #092210;
     --popover: #f6fbf7;
     --popover-foreground: #092210;
-    --primary: #15803d;
+    --primary: #087a25;
     --primary-foreground: #f0fdf4;
     --secondary: #dcfce7;
     --secondary-foreground: #092210;
     --muted: #e2f1e5;
-    --muted-foreground: #3b6e4c;
+    --muted-foreground: #2b633c;
     --accent: #d3ecd8;
     --accent-foreground: #064e22;
     --destructive: #dc2626;
-    --border: rgba(21, 128, 61, 0.24);
-    --input: rgba(21, 128, 61, 0.24);
-    --ring: #16a34a;
-    --chart-1: #16a34a;
-    --chart-2: #059669;
+    --border: rgba(4, 125, 68, 0.32);
+    --input: rgba(4, 125, 68, 0.32);
+    --ring: #0afe60;
+    --chart-1: #087a25;
+    --chart-2: #047d44;
     --chart-3: #d97706;
     --chart-4: #0284c7;
     --chart-5: #dc2626;
     --sidebar: #e5f2e7;
     --sidebar-foreground: #092210;
-    --sidebar-primary: #15803d;
+    --sidebar-primary: #087a25;
     --sidebar-primary-foreground: #f0fdf4;
     --sidebar-accent: #d3ecd8;
     --sidebar-accent-foreground: #064e22;
-    --sidebar-border: rgba(21, 128, 61, 0.22);
-    --sidebar-ring: #16a34a;
+    --sidebar-border: rgba(4, 125, 68, 0.28);
+    --sidebar-ring: #0afe60;
+    --crt-glow: rgba(10, 254, 96, 0.35);
 }
 
-/* Terminal (Dark — CRT Phosphor / Hacker) */
+/* 1. Sevastopol Green (Dark — Sevastopol CRT Phosphor) */
 .theme-terminal.dark,
+.theme-green.dark,
 html.theme-terminal.dark,
-html.dark.theme-terminal {
-    --font-sans: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    --font-heading: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    --radius: 0.25rem;
-    --background: #050a06;
-    --foreground: #c8f7d0;
-    --card: #09120b;
-    --card-foreground: #c8f7d0;
-    --popover: #09120b;
-    --popover-foreground: #c8f7d0;
-    --primary: #22c55e;
-    --primary-foreground: #030704;
-    --secondary: #0f1f13;
-    --secondary-foreground: #86efac;
-    --muted: #0b160e;
-    --muted-foreground: #5e9c70;
-    --accent: #112616;
-    --accent-foreground: #4ade80;
-    --destructive: #ef4444;
-    --border: rgba(34, 197, 94, 0.24);
-    --input: rgba(34, 197, 94, 0.26);
-    --ring: #22c55e;
-    --chart-1: #22c55e;
-    --chart-2: #4ade80;
-    --chart-3: #facc15;
-    --chart-4: #38bdf8;
-    --chart-5: #f87171;
-    --sidebar: #070e08;
-    --sidebar-foreground: #b8f2c2;
-    --sidebar-primary: #22c55e;
-    --sidebar-primary-foreground: #030704;
-    --sidebar-accent: #102214;
-    --sidebar-accent-foreground: #4ade80;
-    --sidebar-border: rgba(34, 197, 94, 0.2);
-    --sidebar-ring: #22c55e;
+html.dark.theme-terminal,
+html.theme-green.dark,
+html.dark.theme-green {
+    --font-sans: var(--font-crt-mono), var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-heading: var(--font-display), var(--font-crt-mono), var(--font-mono), monospace;
+    --radius: 0.125rem;
+    --background: #050b07;
+    --foreground: #d4ffe2;
+    --card: #08150d;
+    --card-foreground: #d4ffe2;
+    --popover: #08150d;
+    --popover-foreground: #d4ffe2;
+    --primary: #0afe60;
+    --primary-foreground: #050b07;
+    --secondary: #0d2216;
+    --secondary-foreground: #68ffa4;
+    --muted: #0b1a10;
+    --muted-foreground: #2ea268;
+    --accent: #0d2216;
+    --accent-foreground: #0afe60;
+    --destructive: #ff4136;
+    --border: rgba(4, 125, 68, 0.55);
+    --input: rgba(4, 125, 68, 0.55);
+    --ring: #0afe60;
+    --chart-1: #0afe60;
+    --chart-2: #68ffa4;
+    --chart-3: #ffb000;
+    --chart-4: #abc0b7;
+    --chart-5: #ff4136;
+    --sidebar: #061009;
+    --sidebar-foreground: #c8f7d0;
+    --sidebar-primary: #0afe60;
+    --sidebar-primary-foreground: #050b07;
+    --sidebar-accent: #0d2216;
+    --sidebar-accent-foreground: #0afe60;
+    --sidebar-border: rgba(4, 125, 68, 0.45);
+    --sidebar-ring: #0afe60;
+    --crt-glow: rgba(10, 254, 96, 0.35);
+}
+
+/* 2. Torrens Gray (Light — MSV-7760 Telemetry Paper) */
+.theme-gray,
+html.theme-gray {
+    --font-sans: var(--font-crt-mono), var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-heading: var(--font-display), var(--font-crt-mono), var(--font-mono), monospace;
+    --radius: 0.125rem;
+    --background: #eef2f0;
+    --foreground: #141c19;
+    --card: #f7faf8;
+    --card-foreground: #141c19;
+    --popover: #f7faf8;
+    --popover-foreground: #141c19;
+    --primary: #3b4f47;
+    --primary-foreground: #f7faf8;
+    --secondary: #dfe7e3;
+    --secondary-foreground: #141c19;
+    --muted: #e3ebe7;
+    --muted-foreground: #52665e;
+    --accent: #d5e0db;
+    --accent-foreground: #1b2622;
+    --destructive: #c93b3b;
+    --border: rgba(89, 110, 102, 0.35);
+    --input: rgba(89, 110, 102, 0.35);
+    --ring: #596e66;
+    --chart-1: #3b4f47;
+    --chart-2: #596e66;
+    --chart-3: #abc0b7;
+    --chart-4: #6e857c;
+    --chart-5: #c93b3b;
+    --sidebar: #e4ece8;
+    --sidebar-foreground: #141c19;
+    --sidebar-primary: #3b4f47;
+    --sidebar-primary-foreground: #f7faf8;
+    --sidebar-accent: #d5e0db;
+    --sidebar-accent-foreground: #141c19;
+    --sidebar-border: rgba(89, 110, 102, 0.3);
+    --sidebar-ring: #596e66;
+    --crt-glow: rgba(171, 192, 183, 0.35);
+}
+
+/* 2. Torrens Gray (Dark — MSV-7760 Monochrome CRT) */
+.theme-gray.dark,
+html.theme-gray.dark,
+html.dark.theme-gray {
+    --font-sans: var(--font-crt-mono), var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-heading: var(--font-display), var(--font-crt-mono), var(--font-mono), monospace;
+    --radius: 0.125rem;
+    --background: #080607;
+    --foreground: #e2eee8;
+    --card: #0e1412;
+    --card-foreground: #e2eee8;
+    --popover: #0e1412;
+    --popover-foreground: #e2eee8;
+    --primary: #abc0b7;
+    --primary-foreground: #080607;
+    --secondary: #16201d;
+    --secondary-foreground: #e2eee8;
+    --muted: #121a17;
+    --muted-foreground: #6e857c;
+    --accent: #16201d;
+    --accent-foreground: #abc0b7;
+    --destructive: #e06d6d;
+    --border: rgba(89, 110, 102, 0.55);
+    --input: rgba(89, 110, 102, 0.55);
+    --ring: #abc0b7;
+    --chart-1: #abc0b7;
+    --chart-2: #e2eee8;
+    --chart-3: #6e857c;
+    --chart-4: #596e66;
+    --chart-5: #e06d6d;
+    --sidebar: #0b0f0d;
+    --sidebar-foreground: #d5e4dd;
+    --sidebar-primary: #abc0b7;
+    --sidebar-primary-foreground: #080607;
+    --sidebar-accent: #16201d;
+    --sidebar-accent-foreground: #abc0b7;
+    --sidebar-border: rgba(89, 110, 102, 0.45);
+    --sidebar-ring: #abc0b7;
+    --crt-glow: rgba(171, 192, 183, 0.35);
+}
+
+/* 3. Nostromo Amber (Light — Weyland-Yutani Amber Paper) */
+.theme-amber,
+html.theme-amber {
+    --font-sans: var(--font-crt-mono), var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-heading: var(--font-display), var(--font-crt-mono), var(--font-mono), monospace;
+    --radius: 0.125rem;
+    --background: #fbf6ec;
+    --foreground: #2b1b00;
+    --card: #fffcf5;
+    --card-foreground: #2b1b00;
+    --popover: #fffcf5;
+    --popover-foreground: #2b1b00;
+    --primary: #b87400;
+    --primary-foreground: #fffcf5;
+    --secondary: #f5e6c8;
+    --secondary-foreground: #2b1b00;
+    --muted: #f2e2c2;
+    --muted-foreground: #7a5209;
+    --accent: #ebd5a7;
+    --accent-foreground: #2b1b00;
+    --destructive: #d93800;
+    --border: rgba(201, 133, 0, 0.35);
+    --input: rgba(201, 133, 0, 0.35);
+    --ring: #ffb000;
+    --chart-1: #b87400;
+    --chart-2: #ffb000;
+    --chart-3: #d97706;
+    --chart-4: #92400e;
+    --chart-5: #d93800;
+    --sidebar: #f4e8cf;
+    --sidebar-foreground: #2b1b00;
+    --sidebar-primary: #b87400;
+    --sidebar-primary-foreground: #fffcf5;
+    --sidebar-accent: #ebd5a7;
+    --sidebar-accent-foreground: #2b1b00;
+    --sidebar-border: rgba(201, 133, 0, 0.3);
+    --sidebar-ring: #ffb000;
+    --crt-glow: rgba(255, 176, 0, 0.4);
+}
+
+/* 3. Nostromo Amber (Dark — MU-TH-UR 6000 Amber CRT) */
+.theme-amber.dark,
+html.theme-amber.dark,
+html.dark.theme-amber {
+    --font-sans: var(--font-crt-mono), var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-heading: var(--font-display), var(--font-crt-mono), var(--font-mono), monospace;
+    --radius: 0.125rem;
+    --background: #0e0902;
+    --foreground: #fff6dd;
+    --card: #170f03;
+    --card-foreground: #fff6dd;
+    --popover: #170f03;
+    --popover-foreground: #fff6dd;
+    --primary: #ffb000;
+    --primary-foreground: #0e0902;
+    --secondary: #261905;
+    --secondary-foreground: #ffe066;
+    --muted: #1e1304;
+    --muted-foreground: #b87e00;
+    --accent: #261905;
+    --accent-foreground: #ffb000;
+    --destructive: #ff4500;
+    --border: rgba(201, 133, 0, 0.55);
+    --input: rgba(201, 133, 0, 0.55);
+    --ring: #ffb000;
+    --chart-1: #ffb000;
+    --chart-2: #ffe066;
+    --chart-3: #c98500;
+    --chart-4: #b87e00;
+    --chart-5: #ff4500;
+    --sidebar: #120b02;
+    --sidebar-foreground: #ffe8ad;
+    --sidebar-primary: #ffb000;
+    --sidebar-primary-foreground: #0e0902;
+    --sidebar-accent: #261905;
+    --sidebar-accent-foreground: #ffb000;
+    --sidebar-border: rgba(201, 133, 0, 0.45);
+    --sidebar-ring: #ffb000;
+    --crt-glow: rgba(255, 176, 0, 0.4);
 }
 
 .theme-terminal,
 .theme-terminal body,
 .theme-terminal .font-sans {
-    font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    font-family: var(--font-crt-mono), var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Subtle CRT scanline overlay in dark terminal themes (green, gray, amber) */
+html.theme-terminal.dark body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.24) 50%
+    );
+    background-size: 100% 3px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.2;
 }
 
 .theme-terminal.dark ::selection {
-    background-color: rgba(34, 197, 94, 0.32);
-    color: #ecfdf5;
+    background-color: color-mix(in srgb, var(--primary) 32%, transparent);
+    color: var(--foreground);
 }
 
 .theme-terminal:not(.dark) ::selection {
-    background-color: rgba(21, 128, 61, 0.22);
-    color: #052e16;
+    background-color: color-mix(in srgb, var(--primary) 22%, transparent);
+    color: var(--foreground);
 }
 
 .theme-terminal.dark .ProseMirror h1,
 .theme-terminal.dark .ProseMirror h2,
 .theme-terminal.dark .ProseMirror h3 {
-    color: #4ade80;
-    text-shadow: 0 0 12px rgba(34, 197, 94, 0.22);
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--crt-glow, rgba(10, 254, 96, 0.25));
 }
 
 @layer base {
@@ -543,27 +732,15 @@ html.dark.theme-terminal {
 }
 
 .theme-terminal * {
-  scrollbar-color: rgba(21, 128, 61, 0.28) transparent;
+  scrollbar-color: color-mix(in srgb, var(--primary) 35%, transparent) transparent;
 }
 
 .theme-terminal ::-webkit-scrollbar-thumb {
-  background: rgba(21, 128, 61, 0.28);
+  background: color-mix(in srgb, var(--primary) 35%, transparent);
 }
 
 .theme-terminal ::-webkit-scrollbar-thumb:hover {
-  background: rgba(21, 128, 61, 0.48);
-}
-
-.theme-terminal.dark * {
-  scrollbar-color: rgba(34, 197, 94, 0.28) transparent;
-}
-
-.theme-terminal.dark ::-webkit-scrollbar-thumb {
-  background: rgba(34, 197, 94, 0.28);
-}
-
-.theme-terminal.dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 197, 94, 0.48);
+  background: color-mix(in srgb, var(--primary) 60%, transparent);
 }
 
 /* Utility to completely hide scrollbars when desired */

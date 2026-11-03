@@ -67,21 +67,57 @@ const THEME_PALETTES: {
   previewLight: { bg: string; sidebar: string; text: string; accent: string }
 }[] = [
   {
-    id: "terminal",
-    name: "Terminal (CRT / Hacker)",
-    tag: "Padrão",
-    desc: "Estética de terminal com fonte monoespaçada, cantos precisos e verde fósforo neon (#22c55e) sobre preto CRT (#050a06).",
+    id: "green",
+    name: "Sevastopol Green (CRT Phosphor)",
+    tag: "Nostromo",
+    desc: "Estética de terminal Sevastopol com fonte Share Tech Mono & VT323 e verde fósforo (#0afe60) sobre preto CRT (#050b07).",
     previewDark: {
-      bg: "#050a06",
-      sidebar: "#070e08",
-      text: "#c8f7d0",
-      accent: "#22c55e",
+      bg: "#050b07",
+      sidebar: "#061009",
+      text: "#d4ffe2",
+      accent: "#0afe60",
     },
     previewLight: {
       bg: "#eef6ef",
       sidebar: "#e5f2e7",
       text: "#092210",
-      accent: "#15803d",
+      accent: "#087a25",
+    },
+  },
+  {
+    id: "gray",
+    name: "Torrens Gray (MSV-7760)",
+    tag: "Nostromo",
+    desc: "Terminal monocromático cinza-esverdeado (#abc0b7) inspirado no monitor central da nave MSV-7760 Torrens (#080607).",
+    previewDark: {
+      bg: "#080607",
+      sidebar: "#0b0f0d",
+      text: "#e2eee8",
+      accent: "#abc0b7",
+    },
+    previewLight: {
+      bg: "#eef2f0",
+      sidebar: "#e4ece8",
+      text: "#141c19",
+      accent: "#3b4f47",
+    },
+  },
+  {
+    id: "amber",
+    name: "Nostromo Amber (MU-TH-UR 6000)",
+    tag: "Nostromo",
+    desc: "Fósforo âmbar clássico Weyland-Yutani (#ffb000 / #ffe066) de alta legibilidade sobre fundo CRT quente (#0e0902).",
+    previewDark: {
+      bg: "#0e0902",
+      sidebar: "#120b02",
+      text: "#fff6dd",
+      accent: "#ffb000",
+    },
+    previewLight: {
+      bg: "#fbf6ec",
+      sidebar: "#f4e8cf",
+      text: "#2b1b00",
+      accent: "#b87400",
     },
   },
   {
@@ -386,15 +422,19 @@ export function SettingsDialog() {
     : "Digite o código de 6 dígitos do Google Authenticator."
 
   const activePalette: ThemePalette =
-    policies?.tema === "terminal"
-      ? "terminal"
+    policies?.tema === "gray"
+      ? "gray"
+      : policies?.tema === "amber"
+      ? "amber"
+      : policies?.tema === "green" || policies?.tema === "terminal"
+      ? "green"
       : policies?.tema === "catppuccin"
       ? "catppuccin"
       : policies?.tema === "normal" || policies?.tema === "classico"
       ? "normal"
       : policies?.tema === "discord"
       ? "discord"
-      : "terminal"
+      : "green"
 
   return (
     <>

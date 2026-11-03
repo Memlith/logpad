@@ -39,6 +39,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar"
+import { NostromoThemeSwitcher } from "@/components/theme-provider"
 import { Button } from "@/components/ui/button"
 import { uploadFiles } from "@/lib/uploadthing"
 import { Download, Sparkles, Search, Terminal, Table as TableIcon } from "lucide-react"
@@ -687,6 +688,10 @@ export function NoteEditor({
         </div>
 
         <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="hidden md:flex items-center mr-1">
+            <NostromoThemeSwitcher />
+          </div>
+
           {/* Quick Open - desktop only */}
           <Button
             type="button"
